@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="icon" href="dua.png">
+  <title>SPMB Madrasah Aliyah Darussalam</title>
+  <style>
+    .rounded-corner-img {
+      border-top-right-radius: 2rem;
+      border-bottom-left-radius: 2rem;
+    }
+    .check-list li::before {
+      content: '✔️';
+      margin-right: 0.5rem;
+      color: green;
+    }
+    body, header {
+      font-family: 'Roboto', sans-serif;
+    }
+    .custom-radius {
+      border-top-left-radius: 6rem;   /* besar */
+      border-bottom-left-radius: 2rem; /* besar */
+      border-top-right-radius: 2rem;   /* kecil */
+      border-bottom-right-radius: 6rem; /* kecil */
+    }
+
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+<!-- Sticky Header -->
+<header class="bg-green-700 text-white py-5 shadow-md sticky top-0 z-50">
+  <div class="container mx-auto px-4 md:px-20 flex justify-between items-center">
+    
+    <!-- Logo dan Judul -->
+    <div class="flex items-center space-x-3">
+      <img src="dua.png" alt="Logo SPMB" class="h-10 w-10 object-contain rounded-full">
+      <h4 class="text-lg md:text-xl font-bold">SPMB MASDATU</h4>
+    </div>
+    
+    <!-- Tombol Daftar -->
+    <button onclick="toggleModal()" class="bg-white hover:bg-green-700 text-green-700 hover:text-white font-semibold py-2 px-6 rounded-full shadow">
+      Daftar
+    </button>
+
+  </div>
+</header>
+
+
+  <!-- Selamat Datang -->
+  <section class="min-h-screen flex flex-col justify-center items-center px-4 md:px-20 text-center bg-white font-[Roboto]">
+    <h1 data-aos="fade-up" data-aos-duration="1000" class="text-3xl md:text-4xl font-extrabold text-black-700 mb-4">
+      Selamat Datang <br><span class="text-2xl text-green-700">Di Portal SPMB Madrasah Aliyah Darussalam</span>
+    </h1>
+    <p data-aos="fade-up" data-aos-duration="1000" class="text-lg md:text-xl text-gray-700 max-w-2xl">
+      Madrasah Aliyah Darussalam Menyambut Calon Peserta Didik Baru Dengan Semangat Dan Harapan Besar. Silahkan Ikuti Alur Pendaftaran Berikut Ini Untuk Bergabung Bersama Kami.
+    </p>
+
+    <!-- Tombol Daftar -->
+    <div data-aos="fade-up" data-aos-duration="1000" class="mt-8">
+      <button onclick="toggleModal()" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-6 rounded-full shadow">
+        Daftar Sekarang
+      </button>
+    </div>
+  </section>
+
+<!-- Alur Pendaftaran -->
+<section id="alur" class="py-16 bg-gray-100 px-4 md:px-8">
+  <h2 data-aos="fade-up" data-aos-duration="1000" class="text-2xl md:text-3xl font-bold text-center text-black-700 mb-12">
+    Alur <span class="text-green-700">Pendaftaran Online</span>
+  </h2>
+
+  <div data-aos="fade-up" data-aos-duration="1000" class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 text-center">
+    <div data-aos="fade-up" data-aos-duration="1000" class="p-6 bg-green-50 hover:bg-green-100 transition rounded-xl shadow">
+      <div class="text-4xl text-green-600 font-bold mb-2">1</div>
+      <h3 class="font-semibold text-lg mb-1">Masuk Portal SPMB</h3>
+      <p class="text-sm text-gray-700">Akses portal melalui alamat web resmi</p>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1000" class="p-6 bg-green-50 hover:bg-green-100 transition rounded-xl shadow">
+      <div class="text-4xl text-green-600 font-bold mb-2">2</div>
+      <h3 class="font-semibold text-lg mb-1">Klik Daftar</h3>
+      <p class="text-sm text-gray-700">Pilih pendaftaran siswa baru atau pindahan</p>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1000" class="p-6 bg-green-50 hover:bg-green-100 transition rounded-xl shadow">
+      <div class="text-4xl text-green-600 font-bold mb-2">3</div>
+      <h3 class="font-semibold text-lg mb-1">Melengkapi Data</h3>
+      <p class="text-sm text-gray-700">Isi data pribadi dan unggah dokumen</p>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1000" class="p-6 bg-green-50 hover:bg-green-100 transition rounded-xl shadow">
+      <div class="text-4xl text-green-600 font-bold mb-2">4</div>
+      <h3 class="font-semibold text-lg mb-1">Unggah Berkas</h3>
+      <p class="text-sm text-gray-700">Upload semua dokumen persyaratan</p>
+    </div>
+  </div>
+</section>
+
+  <!-- Syarat Pendaftaran -->
+<section id="syarat" class="py-20 bg-gray-50 px-6 md:px-32">
+  <div class="grid md:grid-cols-2 gap-8">
+    <div>
+      <h1 data-aos="fade-up" data-aos-duration="1000" class="text-2xl md:text-3xl font-bold text-green-700 mb-4">Syarat <span class="text-black">Pendaftaran</span></h1>
+      <p data-aos="fade-up" data-aos-duration="1000" class="mb-3">Untuk Memenuhi Persyaratan Pendaftaran Siswa Baru, Perlu Beberapa Berkas Yang Harus Disiapkan</p>
+      <ul data-aos="fade-up" data-aos-duration="1000" class="check-list ml-6 space-y-2 text-gray-700">
+        <li>Mengisi Formulir Pendaftaran</li>
+        <li>Fotocopy Ijazah 4 Lembar/SKL Asli</li>
+        <li>Fotocopy KK & KTP Orang Tua. Akta Lahir (Jika ada)</li>
+        <li>Surat Pindah Asli & Rapot (Untuk Siswa Pindahan)</li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1000">
+      <img src="empat.jpg" alt="Syarat" class="h-96 w-full object-cover custom-radius shadow-lg">
+    </div>
+
+  </div>
+</section>
+  <!-- Modal Pilihan Daftar -->
+  <div id="daftarModal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50">
+    <div class="bg-white rounded-xl shadow-lg p-8 w-80 text-center relative">
+      <button onclick="toggleModal()" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-2xl">&times;</button>
+      <h3 class="text-xl font-bold text-green-700 mb-4">Pilih Jenis Pendaftaran</h3>
+      <div class="space-y-4">
+        <a href="https://forms.gle/12KDJbK3TzjieHne9" class="block bg-green-600 hover:bg-green-700 text-white py-2 px-4 rounded-full">Siswa Baru</a>
+        <a href="https://forms.gle/keEoWtKr6zuJEDSC6" class="block bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded-full">Siswa Pindahan</a>
+      </div>
+    </div>
+  </div>
+
+<!-- Alur Pendaftaran -->
+<section id="alur" class="py-16 bg-gray-100 px-4 md:px-8">
+  <h2 data-aos="fade-up" data-aos-duration="1000" class="text-2xl md:text-3xl font-bold text-center text-green-700 mb-12">
+    Informasi <span class="text-black">Pendaftaran</span>
+  </h2>
+
+  <div data-aos="fade-up" data-aos-duration="1000" class="max-w-6xl mx-auto flex flex-wrap justify-center gap-6 text-center">
+    <!-- Card 1 -->
+    <div data-aos="fade-up" data-aos-duration="1000" class="w-full md:w-1/4 rounded shadow">
+      <div class="bg-green-700 text-white font-semibold text-lg px-6 py-4 flex justify-center items-center rounded-t">
+        <span>Gelombang 1</span>
+      </div>
+      <div class="bg-white px-6 py-4 space-y-4">
+        <p><span class="font-semibold">Tanggal:</span><br><span class="font-bold">29 Mei s/d 22 Juni 2025</span></p>
+        <p><span class="font-semibold">Lokasi</span><br><span>Portal SPMB (Online)/Kepontren Darussalam (Ofline)</span></p>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div data-aos="fade-up" data-aos-duration="1000" class="w-full md:w-1/4 rounded shadow">
+      <div class="bg-green-700 text-white font-semibold text-lg px-6 py-4 flex justify-center items-center rounded-t">
+        <span>Gelombang 2</span>
+      </div>
+      <div class="bg-white px-6 py-4 space-y-4">
+        <p><span class="font-semibold">Tanggal:</span><br><span class="font-bold">23 Juni s/d 12 Juli 2025</span></p>
+        <p><span class="font-semibold">Lokasi</span><br><span>Portal SPMB (Online)/Kepontren Darussalam (Ofline)</span></p>
+      </div>
+    </div>
+
+    <div data-aos="fade-up" data-aos-duration="1000" class="w-full md:w-1/4 rounded shadow">
+      <div class="bg-green-700 text-white font-semibold text-lg px-6 py-4 flex justify-center items-center rounded-t">
+        <span>Registrasi</span>
+      </div>
+      <div class="bg-white px-6 py-4 space-y-4">
+        <p><span class="font-semibold">Tanggal:</span><br><span class="font-bold">13 Juli s/d 14 Juli 2025</span></p>
+        <p><span class="font-semibold">Lokasi</span><br><span>Kantor MAS Darussalam</span></p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+  <!-- Footer -->
+  <footer class="bg-gradient-to-r from-green-700 to-green-600 text-white mt-10">
+    <div class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+      
+      <!-- Profil -->
+      <div>
+        <h3 class="text-xl font-bold mb-3">Madrasah Aliyah Darussalam</h3>
+        <p class="text-sm leading-relaxed">Membentuk Generasi Islami Yang Cerdas Dan Berakhlak Mulia.</p>
+      </div>
+      
+      <!-- Navigasi -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Navigasi</h4>
+        <ul class="space-y-2 text-sm">
+          <li><a href="#alur" class="hover:underline hover:underline">Alur Pendaftaran</a></li>
+          <li><a href="#syarat" class="hover:underline hover:underline">Syarat Pendaftaran</a></li>
+        </ul>
+      </div>
+      
+      <!-- Sosial Media -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Ikuti Kami</h4>
+        <div class="flex space-x-4 text-xl">
+          <a href="#" class="hover:text-green-200"><i class="fa-brands fa-facebook"></i></a>
+          <a href="#" class="hover:text-green-200"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="hover:text-green-200"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      
+      <!-- Kontak -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Contact Person</h4>
+        <ul class="text-sm space-y-2">
+          <li><span class="font-medium">Abdus Sukur, S.Pd </span><a href="https://wa.me/6287750267724">(0877-5026-7724)</a></li>
+          <li><span class="font-medium">Mat Niri, S.Pd </span><a href="https://wa.me/6285234330608">(0852-3433-0608)</a></li>
+        </ul>
+      </div>
+
+    </div>
+    
+    <!-- Copyright -->
+    <div class="text-center py-4 bg-green-800 text-sm">
+      &copy; 2025 Madrasah Aliyah Darussalam. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <!-- Script Modal -->
+  <script>
+    AOS.init();
+    function toggleModal() {
+      const modal = document.getElementById('daftarModal');
+      modal.classList.toggle('hidden');
+      modal.classList.toggle('flex');
+    }
+  </script>
+
+</body>
+</html>
